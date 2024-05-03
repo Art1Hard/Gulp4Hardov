@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('html/head.html',{
+"title":"Главная"
+})
+
+<body>
+	@@include('html/header.html',{})
+	<main>
+		<div class="img"></div>
+		<img class="icons" src="@img/icons.svg#quality" alt="">
+		<svg class="interactive">
+			<use href="@img/interactive_icons.svg#arrow"></use>
+		</svg>
+		<svg class="interactive">
+			<use href="@img/interactive_icons.svg#material"></use>
+		</svg>
+		<div class="text">
+			<span>Hello</span> there, how are you?
+		</div>
+	</main>
+	@@include('html/footer.html',{})
+</body>
+
+<script src="js/app.min.js"></script>
+
+</html>
