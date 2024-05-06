@@ -23,6 +23,7 @@ export const path = {
 			otf: `${srcFolder}/fonts/**/*.otf`
 		},
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
+		ico: `${srcFolder}/img/**/*.ico`,
 		svgicons: `${srcFolder}/img/icons/**/*.svg`,
 		interactiveicons: `${srcFolder}/img/interactive_icons/**/*.svg`
 	},
