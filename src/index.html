@@ -8,13 +8,15 @@
 <body>
 	@@include('html/header.html',{})
 	<main>
+		<div>Картинка</div>
 		<div class="img"></div>
-		<img class="icons" src="@img/icons.svg#quality" alt="">
+		<div>Окрашиваемый спрайт</div>
 		<svg class="interactive">
-			<use href="@img/interactive_icons.svg#arrow"></use>
+			<use href="@img/sprite.svg#quality"></use>
 		</svg>
+		<div>Статичный спрайт</div>
 		<svg class="interactive">
-			<use href="@img/interactive_icons.svg#material"></use>
+			<use href="@img/sprite.svg#static--logotip"></use>
 		</svg>
 		<div class="text">
 			<span>Hello</span> there, how are you?
