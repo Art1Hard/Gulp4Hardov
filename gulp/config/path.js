@@ -25,7 +25,6 @@ export const path = {
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
 		ico: `${srcFolder}/img/**/*.ico`,
 		svgicons: `${srcFolder}/img/icons/**/*.svg`,
-		interactiveicons: `${srcFolder}/img/interactive_icons/**/*.svg`
 	},
 	watch: {
 		js: `${srcFolder}/js/**/*.js`,
@@ -33,7 +32,6 @@ export const path = {
 		html: `${srcFolder}/**/*.html`,
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,ico,webp}`,
 		sprite: `${srcFolder}/img/icons/**/*.svg`,
-		interactivesprite: `${srcFolder}/img/interactive_icons/**/*.svg`,
 	},
 	clean: buildFolder,
 	buildFolder: buildFolder,

@@ -34,7 +34,6 @@ function watcher() {
 	gulp.watch(path.watch.scss, scss);
 	gulp.watch(path.watch.js, js);
 	gulp.watch(path.watch.sprite, sprite);
-	gulp.watch(path.watch.interactivesprite, sprite);
 }
 
 const toDash = gulp.series(whitespaceToDash, clearFonts);
