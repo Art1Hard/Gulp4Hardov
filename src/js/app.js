@@ -1,4 +1,3 @@
-import * as webP from "./modules/webp.js";
-import "swiper/css";
+import isWebp from "./modules/webp.js";
 
-webP.isWebp();
+isWebp();
