@@ -4,9 +4,10 @@
 	"description": "",
 	"main": "gulpfile.js",
 	"type": "module",
-	"scripts": {
+"scripts": {
 		"dev": "gulp",
 		"build": "gulp build --build",
+		"deploy": "npm run build && gh-pages -d dist",
 		"zip": "gulp deployZIP --build",
 		"ftp": "gulp deployFTP --build",
 		"todash": "gulp toDash",
@@ -18,6 +19,7 @@
 		"browser-sync": "^3.0.2",
 		"css-loader": "^7.1.2",
 		"del": "^7.1.0",
+		"gh-pages": "^6.2.0",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^9.0.0",
 		"gulp-cheerio": "^1.0.0",
