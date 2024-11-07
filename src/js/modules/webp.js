@@ -1,4 +1,4 @@
-export const isWebp = () => {
+const isWebp = () => {
 	const testWebP = (callback) => {
 		var webP = new Image();
 
@@ -19,4 +19,4 @@ export const isWebp = () => {
 	});
 };
 
-export default isWebp();
+export default isWebp;
