@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "gulpfile.js",
 	"type": "module",
-"scripts": {
+	"scripts": {
 		"dev": "gulp",
 		"build": "gulp build --build",
 		"deploy": "npm run build && gh-pages -d dist",
@@ -52,5 +52,8 @@
 		"webp-converter": "2.2.3",
 		"webpack": "^5.91.0",
 		"webpack-stream": "^7.0.0"
+	},
+	"dependencies": {
+		"@hardov/css-reset": "^1.0.4"
 	}
 }

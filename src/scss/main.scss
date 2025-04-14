@@ -1,0 +1,38 @@
+header {
+	display: flex;
+	align-items: center;
+}
+
+body {
+	font-family: IdealGothic;
+	background-color: black;
+	color: white;
+	span {
+		color: rgb(229, 255, 157);
+	}
+}
+
+.img {
+	background-image: url("../img/cover.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 200px;
+	height: 200px;
+}
+
+.icons {
+	width: 100px;
+	height: auto;
+}
+
+.interactive {
+	fill: rgb(229, 255, 157);
+	width: 100px;
+	height: 100px;
+}
+
+.text {
+	display: block;
+	font-size: 22px;
+}
