@@ -1,12 +1,12 @@
 import webpack from "webpack-stream";
 
-export const js = () => {
+export const scripts = () => {
 	return app.gulp
-		.src(app.path.src.js, { sourcemaps: app.isDev })
+		.src(app.path.src.scripts, { sourcemaps: app.isDev }) // Обрати внимание: ts, не js
 		.pipe(
 			app.plugins.plumber(
 				app.plugins.notify.onError({
-					title: "JS",
+					title: "TypeScript",
 					message: "Error: <%= error.message %>",
 				})
 			)
@@ -14,18 +14,20 @@ export const js = () => {
 		.pipe(
 			webpack({
 				mode: app.isBuild ? "production" : "development",
+				devtool: app.isDev ? "source-map" : false,
+				resolve: {
+					extensions: [".ts", ".js"],
+				},
 				module: {
 					rules: [
 						{
+							test: /\.ts$/,
+							use: "ts-loader",
+							exclude: /node_modules/,
+						},
+						{
 							test: /\.s[ac]ss$/i,
-							use: [
-								// Creates `style` nodes from JS strings
-								"style-loader",
-								// Translates CSS into CommonJS
-								"css-loader",
-								// Compiles Sass to CSS
-								"sass-loader",
-							],
+							use: ["style-loader", "css-loader", "sass-loader"],
 						},
 						{
 							test: /\.css$/i,
@@ -34,7 +36,7 @@ export const js = () => {
 					],
 				},
 				output: {
-					filename: `app.min.js`,
+					filename: "app.min.js",
 				},
 			})
 		)

@@ -1,8 +1,3 @@
-header {
-	display: flex;
-	align-items: center;
-}
-
 body {
 	font-family: IdealGothic;
 	background-color: black;
@@ -19,17 +14,17 @@ body {
 	background-size: cover;
 	width: 200px;
 	height: 200px;
+	margin-bottom: 20px;
 }
 
-.icons {
+.interactive,
+.logo {
 	width: 100px;
-	height: auto;
+	height: 100px;
 }
 
 .interactive {
 	fill: rgb(229, 255, 157);
-	width: 100px;
-	height: 100px;
 }
 
 .text {

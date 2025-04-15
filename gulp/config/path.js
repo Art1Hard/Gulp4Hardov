@@ -1,5 +1,5 @@
 // * Получаем имя папки проекта
-import * as nodePath from 'path';
+import * as nodePath from "path";
 const rootFolder = nodePath.basename(nodePath.resolve());
 
 const buildFolder = `./dist`;
@@ -11,23 +11,23 @@ export const path = {
 		css: `${buildFolder}/css/`,
 		html: `${buildFolder}/`,
 		fonts: `${buildFolder}/fonts/`,
-		images: `${buildFolder}/img/`
+		images: `${buildFolder}/img/`,
 	},
 	src: {
-		js: `${srcFolder}/js/app.js`,
+		scripts: `${srcFolder}/scripts/app.ts`,
 		scss: `${srcFolder}/scss/style.scss`,
 		html: `${srcFolder}/*.html`,
 		fonts: {
 			fonts: `${srcFolder}/fonts/`,
 			ttf: `${srcFolder}/fonts/**/*.ttf`,
-			otf: `${srcFolder}/fonts/**/*.otf`
+			otf: `${srcFolder}/fonts/**/*.otf`,
 		},
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
 		ico: `${srcFolder}/img/**/*.ico`,
 		svgicons: `${srcFolder}/img/icons/**/*.svg`,
 	},
 	watch: {
-		js: `${srcFolder}/js/**/*.js`,
+		scripts: `${srcFolder}/scripts/**`,
 		scss: `${srcFolder}/scss/**/*.scss`,
 		html: `${srcFolder}/**/*.html`,
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,ico,webp}`,
@@ -37,5 +37,5 @@ export const path = {
 	buildFolder: buildFolder,
 	srcFolder: srcFolder,
 	rootFolder: rootFolder,
-	ftp: `htdocs/`
-}
+	ftp: `htdocs/`,
+};

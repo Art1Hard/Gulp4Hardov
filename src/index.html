@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+	@@include('html/head.html',{ "title":"Главная" })
 
-@@include('html/head.html',{
-"title":"Главная"
-})
+	<body>
+		@@include('html/header.html',{})
+		<main>
+			<div class="img"></div>
+			<p>Окрашиваемый спрайт</p>
+			<svg class="interactive">
+				<use href="@img/sprite.svg#quality"></use>
+			</svg>
+			<p>Статичный спрайт</p>
+			<svg class="logo">
+				<use href="@img/sprite.svg#static--logo"></use>
+			</svg>
+			<p class="text"><span>Hello</span> there, how are you?</p>
+		</main>
+		@@include('html/footer.html',{})
+	</body>
 
-<body>
-	@@include('html/header.html',{})
-	<main>
-		<div>Картинка</div>
-		<div class="img"></div>
-		<div>Окрашиваемый спрайт</div>
-		<svg class="interactive">
-			<use href="@img/sprite.svg#quality"></use>
-		</svg>
-		<div>Статичный спрайт</div>
-		<svg class="interactive">
-			<use href="@img/sprite.svg#static--logotip"></use>
-		</svg>
-		<div class="text">
-			<span>Hello</span> there, how are you?
-		</div>
-	</main>
-	@@include('html/footer.html',{})
-</body>
-
-<script src="js/app.min.js"></script>
-
+	<script src="js/app.min.js"></script>
 </html>
