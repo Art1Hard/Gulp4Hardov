@@ -3,34 +3,45 @@ import webphtmlnosvg from "gulp-webp-html-nosvg"; // * Подключение we
 import versionNumber from "gulp-version-number"; // * Избегает кэширование вёрстки браузером
 
 export const html = () => {
-	return app.gulp.src(app.path.src.html)
-		.pipe(app.plugins.plumber(
-			app.plugins.notify.onError({
-				title: "HTML",
-				message: "Error: <%= error.message %>"
-			})
-		))
+	return app.gulp
+		.src(app.path.src.html)
+		.pipe(
+			app.plugins.plumber(
+				app.plugins.notify.onError({
+					title: "HTML",
+					message: "Error: <%= error.message %>",
+				})
+			)
+		)
 		.pipe(fileinclude())
-		.pipe(app.plugins.replace(/@img\//g, 'img/'))
+		.pipe(app.plugins.replace(/@img\//g, "img/"))
 		.pipe(app.plugins.if(app.isBuild, webphtmlnosvg()))
 		.pipe(
-			app.plugins.if(app.isBuild,
+			app.plugins.if(
+				app.isBuild,
 				versionNumber({
-					'value': '%DT%',
-					'append': {
-						'key': '_v',
-						'cover': 0,
-						'to': [
-							'css',
-							'js',
-						]
+					value: "%DT%",
+					append: {
+						key: "_v",
+						cover: 0,
+						to: [
+							"css",
+							{
+								type: "js",
+								attr: ["src", "custom-src"],
+								key: "_v",
+								value: "%DATE%",
+								cover: 0,
+								files: ["app.min.js"],
+							},
+						],
 					},
-					'output': {
-						'file': 'gulp/version.json'
-					}
+					output: {
+						file: "gulp/version.json",
+					},
 				})
 			)
 		)
 		.pipe(app.gulp.dest(app.path.build.html))
 		.pipe(app.plugins.browsersync.stream());
-}
+};
